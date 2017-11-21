@@ -1,20 +1,80 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=">
+<div class="container-fluid">
+  <h1>Employee Management</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Departments</h3>
+          <div class="pull-right">
+            <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+              <i class="glyphicon glyphicon-filter"></i>
+            </span>
+          </div>
+        </div>
+        <div class="panel-body">
+          <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Developers"
+          />
+        </div>
+        <table class="table table-hover" id="dev-table">
+          <thead>
+            <tr>
+              <th>DepartmentId</th>
+              <th>DepartmentName</th>
+              <th>ManagerId</th>
+              <th>LocationId</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row blue" *ngFor="let department of Departments(); let i = index" (click)="getEmployees(department.departmentId())"
+              [class.active]="i == selectedRow">
+              <td>{{department.departmentId()}}</td>
+              <td>{{department.departmentName()}}</td>
+              <td>{{department.managerId()}}</td>
+              <td>{{department.locationId()}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <h3 class="panel-title">Employees</h3>
+          <div class="pull-right">
+            <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+              <i class="glyphicon glyphicon-filter"></i>
+            </span>
+          </div>
+        </div>
+        <div class="panel-body">
+          <input type="text" class="form-control" id="task-table-filter" data-action="filter" data-filters="#task-table" placeholder="Filter Tasks"
+          />
+        </div>
+        <table class="table table-hover" id="task-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Phone No</th>
+              <th>DoJ</th>
+              <th>Salary</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Site Wireframes</td>
+              <td>John Smith</td>
+              <td>in progress</td>
+              <td>in progress</td>
+              <td>in progress</td>
+              <td>in progress</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://blog.angular.io//">Angular blog</a></h2>
-  </li>
-</ul>
-
