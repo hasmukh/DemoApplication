@@ -5,13 +5,13 @@ import { Employee, IEmployee } from "./employee.model";
 
 @Injectable()
 export class EmployeeService {
-  private static empUrl = "http://10.170.21.16:9090/department/110/employees";
+  private static empUrl = "http://10.170.21.16:9090/department/";
 
   constructor(private http: Http) {}
 
   getEmployees(departmentId: string): Observable<Employee[]> {
     return this.http
-      .get(EmployeeService.empUrl + "employee/:id")
+      .get(EmployeeService.empUrl + departmentId + "/employees/")
       .map((res: Response) => {
         return Employee.fromJsonList(res.json());
       });

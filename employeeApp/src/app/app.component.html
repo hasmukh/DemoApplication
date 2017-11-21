@@ -15,7 +15,7 @@
           <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Developers"
           />
         </div>
-        <table class="table table-hover" id="dev-table">
+        <table class="table table-hover table-fixed" id="dev-table">
           <thead>
             <tr>
               <th>DepartmentId</th>
@@ -25,7 +25,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="row blue" *ngFor="let department of Departments(); let i = index" (click)="getEmployees(department.departmentId())"
+            <tr *ngFor="let department of Departments(); let i = index" (click)="getEmployees(department.departmentId(), index)"
               [class.active]="i == selectedRow">
               <td>{{department.departmentId()}}</td>
               <td>{{department.departmentName()}}</td>
@@ -63,14 +63,14 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Site Wireframes</td>
-              <td>John Smith</td>
-              <td>in progress</td>
-              <td>in progress</td>
-              <td>in progress</td>
-              <td>in progress</td>
+            <tr *ngFor="let emp of Employees()">
+              <td>{{emp.employeeId()}}</td>
+              <td>{{emp.firstName()}}</td>
+              <td>{{emp.lastName()}}</td>
+              <td>{{emp.email()}}</td>
+              <td>{{emp.phoneNumber()}}</td>
+              <td>{{emp.hireDate()}}</td>
+              <td>{{emp.salary()}}</td>
             </tr>
           </tbody>
         </table>

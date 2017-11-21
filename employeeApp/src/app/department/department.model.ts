@@ -25,7 +25,6 @@ export class Department {
   static fromJsonList(departmentsPayload?: IDepartment[]): Department[] {
     const departments: Department[] = [];
     departmentsPayload.forEach(department => {
-      console.log(this.fromJson(department));
       departments.push(this.fromJson(department));
     });
     return departments;
