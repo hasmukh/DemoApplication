@@ -24,7 +24,9 @@
     "angular2-draggable": "^1.0.7",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
+    "dragula": "^3.7.2",
     "jquery": "^3.2.1",
+    "ng2-dragula": "^1.5.0",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"
   },
