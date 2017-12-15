@@ -1,0 +1,30 @@
+.small-box{
+  border: 1px solid gray;
+  margin-right: 80px;
+  margin-bottom: 30px;
+  height: 50px;
+}
+
+.medium-box1{
+  border: 1px solid #808080;
+  height: 200px;
+  margin-right: 20px;
+}
+
+.medium-box2{
+  border: 1px solid #808080;
+  height: 200px;
+  margin-left: 20px;
+}
+
+.large-box{
+  border: 1px solid gray;
+  height: 200px;
+}
+
+.handle {
+  padding: 0 5px;
+  margin-right: 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+  cursor: move;
+}
